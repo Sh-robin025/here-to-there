@@ -12,13 +12,12 @@ import Destination from './components/Destination';
 import { createContext, useState } from 'react';
 import SignIn from './components/Authentication/SignIn';
 import PrivetRoute from './components/Authentication/PrivetRoute';
-import SignUp from './components/Authentication/SignUp';
 
 export const vehicleContext = createContext()
 export const signedUserContext = createContext()
 
 function App() {
-  const [vehicle, setVehicle] = useState()
+  const [vehicle, setVehicle] = useState(null)
   const [signedUser, setSignedUser] = useState(null)
   console.log(signedUser);
 

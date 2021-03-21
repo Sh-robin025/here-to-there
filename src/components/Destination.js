@@ -1,6 +1,7 @@
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { vehicleContext } from '../App';
 import Calculation from './Calculation';
 import DestinationForm from './DestinationForm';
 import GoogleMap from './GoogleMap';
@@ -8,8 +9,12 @@ import GoogleMap from './GoogleMap';
 const Destination = () => {
     const [inputValue, setInputValue] = useState()
     const [destination, setDestination] = useState(null)
+    const [vehicle, setVehicle] = useContext(vehicleContext)
     const searchRide = () => {
-        if (inputValue?.from && inputValue?.to) {
+        if (vehicle.img === undefined) {
+            alert("go to home page and select your ride first.")
+        }
+        if (vehicle.img && inputValue?.from && inputValue?.to) {
             setDestination(true)
         }
     }

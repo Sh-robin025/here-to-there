@@ -40,17 +40,18 @@ export const handleFbSignIn = () => {
     return firebase.auth()
         .signInWithPopup(fbProvider)
         .then(data => {
-            // const credential = data.credential;
+            console.log(data);
             const userInfo = data.user;
             return userInfo;
-            // const accessToken = credential.accessToken;
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             const email = error.email;
+            // return email ;
             const credential = error.credential;
-            console.log(errorCode, errorMessage, email, credential);
+            console.log(credential.accessToken);
+            console.log(errorCode, errorMessage, email);
         });
 }
 export const handleGoogleSignIn = () => {

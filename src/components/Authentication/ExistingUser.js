@@ -56,7 +56,7 @@ const ExistingUser = () => {
         if (user === null) {
             alert("fill up the form first,rather you can not sign up !");
         }
-        if (user.email && user.password) {
+        if (user?.email && user?.password) {
             handleLogInUser(user.email, user.password)
                 .then(data => {
                     setSignedUser(data);
@@ -96,7 +96,7 @@ const ExistingUser = () => {
                 <Button variant="primary" block type="submit"
                     onClick={handleLogIn}
                 >Submit</Button> <br />
-                <p style={{ fontSize: '15px', textAlign: 'center' }}>Don't have account ? <span style={{ borderBottom: "1px solid blue",color:"blue", cursor: "pointer" }} onClick={() => setNewUser(!newUser)}> Create a  account.</span></p>
+                <p style={{ fontSize: '15px', textAlign: 'center' }}>Don't have account ? <span style={{ borderBottom: "1px solid blue", color: "blue", cursor: "pointer" }} onClick={() => setNewUser(!newUser)}> Create a  account.</span></p>
             </Form>
         </div >
     );

@@ -26,7 +26,6 @@ const DestinationForm = (props) => {
                     selected={startDate}
                     onChange={date => setStartDate(date)}
                     onBlur={getInputValue}
-                // isClearable
                 />
             }
 

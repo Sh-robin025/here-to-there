@@ -6,15 +6,14 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 const GoogleMap = () => {
     const staticDefaultProps = {
         center: {
-            lat: 59.95,
-            lng: 30.33
+            lat: 23.806549,
+            lng: 90.369505
         },
-        zoom: 11
+        zoom: 12
     };
 
     return (
-        // Important! Always set the container height explicitly
-        <div style={{ height: '70vh'}} className="col">
+        <div style={{ height: '70vh' }} className="col">
             <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyDIpq9OIT4zOoKtDHMxmOynViFAblBCDw0" }}
                 defaultCenter={staticDefaultProps.center}

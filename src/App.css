@@ -11,11 +11,17 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
 }
-/* #or::after{
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 20%;
-} */
+@media(max-width:400px){
+  .App{
+    background-image: url(./images/Bg.png);
+    background-size: cover;
+    height: 100%;
+  }
+  .header Button{
+    font-size: 5px;
+    border-radius: 50%;
+  }
+}
+
 
 

@@ -6,7 +6,7 @@ import { vehicleContext } from '../App';
 // import '../App.css'
 
 const Calculation = (props) => {
-    console.log(props.inputValue);
+    // console.log(props.inputValue);
     const { from, to, date } = props?.inputValue;
     const [vehicle, setVehicle] = useContext(vehicleContext)
 
@@ -35,12 +35,6 @@ const Calculation = (props) => {
                     <h6>{vehicle?.name}</h6>
                     <h6><FontAwesomeIcon icon={faUsers} /> 4</h6><h6>$25</h6>
                 </ListGroupItem>
-                {/* <ListGroupItem><img src={img} style={{ height: '50px' }} alt="" /> {name}
-                    <FontAwesomeIcon icon={faUserFriends} /> 2 $40
-                </ListGroupItem>
-                <ListGroupItem><img src={img} style={{ height: '50px' }} alt="" /> {name}
-                    <FontAwesomeIcon icon={faUsers} /> 4  $25
-                </ListGroupItem> */}
             </ListGroup>
         </div >
     );
