@@ -14,7 +14,7 @@ const Body = () => {
     return (
         <Container className="row mt-5">
             {
-                vehicle?.map(item => <Vehicle key={item.id} data={item} />)
+               vehicle?.map(item => <Vehicle key={item.id} data={item} />)
             }
         </Container>
     );

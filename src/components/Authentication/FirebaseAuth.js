@@ -40,7 +40,6 @@ export const handleFbSignIn = () => {
     return firebase.auth()
         .signInWithPopup(fbProvider)
         .then(data => {
-            console.log(data);
             const userInfo = data.user;
             return userInfo;
         })
@@ -48,7 +47,6 @@ export const handleFbSignIn = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
             const email = error.email;
-            // return email ;
             const credential = error.credential;
             console.log(credential.accessToken);
             console.log(errorCode, errorMessage, email);

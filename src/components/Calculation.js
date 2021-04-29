@@ -3,10 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext, useState } from 'react';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 import { vehicleContext } from '../App';
-// import '../App.css'
 
 const Calculation = (props) => {
-    // console.log(props.inputValue);
     const { from, to, date } = props?.inputValue;
     const [vehicle, setVehicle] = useContext(vehicleContext)
 

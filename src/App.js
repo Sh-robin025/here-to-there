@@ -19,7 +19,6 @@ export const signedUserContext = createContext()
 function App() {
   const [vehicle, setVehicle] = useState(null)
   const [signedUser, setSignedUser] = useState(null)
-  console.log(signedUser);
 
   return (
     <signedUserContext.Provider value={[signedUser, setSignedUser]}>

@@ -14,7 +14,6 @@ export const userContext = createContext()
 const SignIn = () => {
     const [newUser, setNewUser] = useState(false)
     const [signedUser, setSignedUser] = useContext(signedUserContext)
-    console.log(signedUser);
     initialization()
     const history = useHistory();
     const location = useLocation();
@@ -23,7 +22,6 @@ const SignIn = () => {
     const fbSignIn = () => {
         handleFbSignIn()
             .then(data => {
-                // console.log(data);
                 setSignedUser(data);
                 history.replace(from);
             })
