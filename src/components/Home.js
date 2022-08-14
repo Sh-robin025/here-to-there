@@ -1,14 +1,13 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
-import Body from './Body';
-import Header from './Header';
+import React from "react";
+import { Container } from "react-bootstrap";
+import Body from "./Body";
 
 const Home = () => {
-    return (
-        <Container>
-            <Body />
-        </Container>
-    );
+  return (
+    <Container>
+      <Body />
+    </Container>
+  );
 };
 
 export default Home;
