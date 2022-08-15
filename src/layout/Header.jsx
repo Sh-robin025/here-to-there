@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 import { FiPhoneCall } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import Button from "../styles/button";
 import { Logo, MobileMenu, Navbar, NavItem, NavItems } from "../styles/navbar";
@@ -11,7 +12,9 @@ const Header = () => {
   return (
     <Navbar container className="container">
       <Logo>
-        <img src={logo} alt="" className="logo" />
+        <Link to="/">
+          <img src={logo} alt="" className="logo" />
+        </Link>
         <span>Here to There</span>
       </Logo>
 
@@ -30,7 +33,9 @@ const Header = () => {
       <NavItems mobileMenu={showMenu}>
         <NavItem>Offers</NavItem>
         <NavItem>Support</NavItem>
-        <NavItem>Login</NavItem>
+        <Link to="auth">
+          <NavItem>Login</NavItem>
+        </Link>
       </NavItems>
     </Navbar>
   );

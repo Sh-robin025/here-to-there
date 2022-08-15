@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import Layout from "./layout";
-import HomePage from "./pages/home";
+import AppRouter from "./router";
 
 export const vehicleContext = createContext();
 export const signedUserContext = createContext();
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <Layout>
-      <HomePage />
+      <AppRouter />
     </Layout>
   );
 }

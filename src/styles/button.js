@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Button = styled.button`
-  background: #d33f1a;
+  background: ${({ bg }) => (bg ? bg : "#d33f1a")};
   padding: 5px 25px;
   color: #ffffff;
   border: none;
@@ -9,6 +9,7 @@ const Button = styled.button`
   transition: all 0.5 ease-in-out;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 
   :hover {

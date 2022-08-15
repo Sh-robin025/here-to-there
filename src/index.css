@@ -20,6 +20,10 @@ h1 {
   font-size: 50px;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 @media (max-width: 500px) {
   h1 {
     font-size: 40px;
