@@ -7,6 +7,8 @@ import Card from "../../styles/card";
 import Container from "../../styles/container";
 import Form from "../../styles/form";
 import checkValidation from "../../utils/formValidation";
+import faceBookLogin from "./facebookSignIn";
+import googleSignIn from "./googleSignIn";
 
 const AuthPage = () => {
   const handleSubmit = async (e) => {
@@ -36,11 +38,11 @@ const AuthPage = () => {
         </Form>
         <p>Or</p>
         <div className="d-flex flex-column px-5 g-2 ">
-          <Button bg="blue" className="py-2">
+          <Button bg="blue" className="py-2" onClick={faceBookLogin}>
             <FaFacebook /> <span>Continue With Facebook</span>
           </Button>
 
-          <Button className="py-2 mt-2">
+          <Button className="py-2 mt-2" onClick={googleSignIn}>
             <FaGoogle />
             <span>Continue With Google</span>
           </Button>
