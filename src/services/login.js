@@ -7,7 +7,7 @@ import {
 } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
-import { db } from "../utils/firebase";
+import { db } from "../firebase.config";
 
 export const loginWithApp = async (platform) => {
   let provider;

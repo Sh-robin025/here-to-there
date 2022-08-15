@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
-import { db } from "../utils/firebase";
+import { db } from "../firebase.config";
 
 const createAccount = async ({ email, name, password }) => {
   const auth = getAuth();
