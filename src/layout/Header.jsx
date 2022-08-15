@@ -33,7 +33,7 @@ const Header = () => {
       <NavItems mobileMenu={showMenu}>
         <NavItem>Offers</NavItem>
         <NavItem>Support</NavItem>
-        <Link to="auth">
+        <Link to="/login">
           <NavItem>Login</NavItem>
         </Link>
       </NavItems>
