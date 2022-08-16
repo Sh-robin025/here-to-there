@@ -1,0 +1,5 @@
+export const actionTypes = {
+  USER_LOGIN: "USER_LOGIN",
+  USER_LOGOUT: "USER_LOGOUT",
+  SET_DESTINED_PATH: "SET_DESTINED_PATH",
+};

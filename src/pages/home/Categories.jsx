@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import bike from "../../assets/bike.png";
 import bus from "../../assets/bus.png";
 import car from "../../assets/car.png";
@@ -18,7 +19,9 @@ const Categories = () => {
             <Col span={1} key={key}>
               <Card shadow>
                 <img src={item.image} alt="" height={100} />
-                <h3 className="my-2">{item.name}</h3>
+                <h3 className="my-2">
+                  <Link to="ride_request">{item.name}</Link>
+                </h3>
               </Card>
             </Col>
           ))}

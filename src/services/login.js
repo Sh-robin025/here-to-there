@@ -8,6 +8,8 @@ import {
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { db } from "../firebase.config";
+import { userActions } from "../redux/actions/user.action";
+import store from "../redux/store";
 
 export const loginWithApp = async (platform) => {
   let provider;
@@ -26,7 +28,8 @@ export const loginWithApp = async (platform) => {
 
     await setDoc(doc(db, "users", email), { name: displayName, avatar: photoURL, id: uid, email });
 
-    // keep user in state
+    store.dispatch(userActions.login({ email, name: displayName, avatar: photoURL, id: uid }));
+    return;
   } catch (error) {
     toast.error("something went wrong");
     console.log(error);
@@ -39,10 +42,13 @@ export const loginWithEmail = async ({ email, password }) => {
   try {
     const { user } = await signInWithEmailAndPassword(auth, email, password);
     const res = await getDoc(doc(db, "users", user.email));
-    toast.success("Login successful");
 
-    // keep user in state
-    return res.data();
+    const userData = await res.data();
+    delete userData.password;
+
+    store.dispatch(userActions.login(userData));
+    toast.success("Login successful");
+    return userData;
   } catch (error) {
     toast.error("Maybe your password is wrong.");
     console.log(error);

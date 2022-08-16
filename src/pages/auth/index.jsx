@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Input from "../../components/Input";
 import { loginWithApp, loginWithEmail } from "../../services/login";
@@ -15,7 +16,10 @@ const AuthPage = () => {
   const [submitting, setSubmitting] = useState(false);
   const [worksFor, setWorksFor] = useState("login");
 
+  const { destined, user_credentials } = useSelector((state) => state);
+
   const location = useLocation().pathname.split("/")[1];
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,18 +48,24 @@ const AuthPage = () => {
 
     if (worksFor === "login") {
       await loginWithEmail(formData);
-      setSubmitting(false);
     }
 
     if (worksFor === "register") {
       await createAccount(formData);
-      setSubmitting(false);
     }
+
+    setSubmitting(false);
   };
 
   useEffect(() => {
     setWorksFor(location);
   }, [location]);
+
+  useEffect(() => {
+    if (user_credentials) {
+      destined ? navigate(`/${destined}`) : navigate("/");
+    }
+  }, [user_credentials, navigate, destined]);
 
   return (
     <Container
@@ -100,7 +110,7 @@ const AuthPage = () => {
             {submitting ? (
               <>
                 <span
-                  class="spinner-border spinner-border-sm"
+                  className="spinner-border spinner-border-sm"
                   role="status"
                   aria-hidden="true"
                 ></span>
