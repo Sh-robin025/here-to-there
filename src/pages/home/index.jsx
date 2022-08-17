@@ -1,13 +1,15 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import setDestinedRoute from "../../redux/actions/route.action";
+import setDestinedPage from "../../redux/actions/page.action";
 import Categories from "./Categories";
 import HeroSection from "./HeroSection";
 import Why from "./Why";
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  dispatch(setDestinedRoute(""));
+
+  dispatch(setDestinedPage(""));
+  // dispatch(setRideCategory(""));
 
   return (
     <>

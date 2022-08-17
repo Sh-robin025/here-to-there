@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import styled from "styled-components";
 import Input from "../../components/Input";
-import { stoppage } from "../../utils/constant";
+import stoppages from "../../utils/stoppages";
 
 const Wrapper = styled.div`
   position: relative;
@@ -42,7 +42,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const LocationPick = ({ placeholder, onChange }) => {
+const LocationPick = ({ placeholder, onChange, ...rest }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [location, setLocation] = useState("");
 
@@ -62,10 +62,11 @@ const LocationPick = ({ placeholder, onChange }) => {
         placeholder={placeholder}
         defaultValue={location}
         onFocus={setShowDropdown}
+        {...rest}
       />
       {showDropdown && (
         <div className="dropdown" ref={dropDownEL}>
-          {stoppage.map((i) => (
+          {stoppages.map((i) => (
             <h6
               key={i}
               onClick={() => {

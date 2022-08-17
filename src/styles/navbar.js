@@ -102,11 +102,16 @@ export const NavItem = styled.li`
   padding: 5px 20px;
   font-size: 15px;
   font-weight: 600;
+  border-radius: 10px;
+  transition: all ease 0.5s;
 
   :nth-last-child(1) {
     background: #d33f1a;
     color: #fff;
     border-radius: 5px;
+  }
+  :hover {
+    box-shadow: 0px 0px 10px #d33f1a;
   }
 `;
 

@@ -1,4 +1,4 @@
-export const stoppage = [
+const stoppages = [
   "Agargaon",
   "Mirpur-10",
   "Kajipara",
@@ -35,3 +35,5 @@ export const stoppage = [
   "Purobi",
   "Chiriyakhana",
 ];
+
+export default stoppages;

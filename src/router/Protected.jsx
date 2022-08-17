@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
-import setDestinedRoute from "../redux/actions/route.action";
+import setDestinedPage from "../redux/actions/page.action";
 
 const Protected = ({ page }) => {
   const user = useSelector((state) => state.user_credentials);
@@ -10,11 +10,11 @@ const Protected = ({ page }) => {
   const location = useLocation().pathname.split("/")[1];
 
   if (!user) {
-    dispatch(setDestinedRoute(location));
+    dispatch(setDestinedPage(location));
     return <Navigate to="/login" />;
   }
 
-  dispatch(setDestinedRoute(""));
+  dispatch(setDestinedPage(""));
 
   return page;
 };

@@ -1,14 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import bike from "../../assets/bike.png";
-import bus from "../../assets/bus.png";
-import car from "../../assets/car.png";
-import train from "../../assets/train.png";
+import { setRideCategory } from "../../redux/actions/ride.action";
 import Card from "../../styles/card";
 import Container from "../../styles/container";
 import { Col, Grid, SectionWrapper } from "../../styles/layout";
+import categories from "../../utils/categories";
 
 const Categories = () => {
+  const dispatch = useDispatch();
+
   return (
     <SectionWrapper bg="#fff" className="py-5">
       <Container className="text-center">
@@ -20,7 +21,9 @@ const Categories = () => {
               <Card shadow>
                 <img src={item.image} alt="" height={100} />
                 <h3 className="my-2">
-                  <Link to="ride_request">{item.name}</Link>
+                  <Link to="ride_request" onClick={() => dispatch(setRideCategory(item.name))}>
+                    {item.name}
+                  </Link>
                 </h3>
               </Card>
             </Col>
@@ -30,12 +33,5 @@ const Categories = () => {
     </SectionWrapper>
   );
 };
-
-const categories = [
-  { name: "Bike", image: bike },
-  { name: "Car", image: car },
-  { name: "Bus", image: bus },
-  { name: "train", image: train },
-];
 
 export default Categories;

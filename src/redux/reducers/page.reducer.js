@@ -4,7 +4,7 @@ const initialState = "";
 
 const pageReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case actionTypes.SET_DESTINED_PATH:
+    case actionTypes.SET_DESTINED_PAGE:
       state = payload;
       return state;
 

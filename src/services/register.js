@@ -15,7 +15,6 @@ const createAccount = async ({ email, name, password }) => {
       password,
     });
 
-    // keep user in state
     toast.success("Account Created Successfully.");
   } catch (error) {
     toast.error("something went wrong");

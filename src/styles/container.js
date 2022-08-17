@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.section`
   margin: auto;
+  min-height: ${({ height }) => height};
 
   @media (min-width: 1500px) {
     width: 1440px;
