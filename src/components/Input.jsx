@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import styled from "styled-components";
 
@@ -28,12 +28,12 @@ const StyledInput = styled.div`
   }
 `;
 
-const Input = ({ type, ...rest }) => {
+const Input = forwardRef(({ type, ...rest }, ref) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <StyledInput>
-      <input type={showPassword ? "text" : type} {...rest} />
+      <input type={showPassword ? "text" : type} ref={ref} {...rest} />
 
       {type === "password" && showPassword ? (
         <AiFillEyeInvisible onClick={() => setShowPassword(false)} />
@@ -42,6 +42,6 @@ const Input = ({ type, ...rest }) => {
       )}
     </StyledInput>
   );
-};
+});
 
 export default Input;

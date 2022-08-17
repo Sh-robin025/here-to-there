@@ -2,12 +2,12 @@ import { combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import routeReducer from "./reducers/route.reducer";
+import pageReducer from "./reducers/page.reducer";
 import userReducer from "./reducers/user.reducer";
 
 const rootReducer = combineReducers({
   user_credentials: userReducer,
-  destined: routeReducer,
+  destined_page: pageReducer,
 });
 
 const persistConfig = {

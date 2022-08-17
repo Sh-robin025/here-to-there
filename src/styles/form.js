@@ -5,7 +5,7 @@ const Form = styled.form`
   flex-direction: ${({ vertical }) => (vertical ? "column" : "row")};
   gap: 15px;
   padding: 20px;
-  min-width: 400px;
+  min-width: ${({ width }) => width};
 `;
 
 export default Form;

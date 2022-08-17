@@ -26,6 +26,10 @@ export const Grid = styled.div`
   justify-content: space-between;
   min-height: ${({ height }) => height};
 
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(${({ lg }) => lg}, 1fr);
+  }
+
   @media (max-width: 768px) {
     grid-template-columns: repeat(${({ md }) => md}, 1fr);
   }

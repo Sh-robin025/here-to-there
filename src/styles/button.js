@@ -11,6 +11,7 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   gap: 10px;
+  box-shadow: ${({ shadow }) => shadow && "0px 0px 15px #666"};
 
   :hover {
     background: #ee4a3c;

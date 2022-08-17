@@ -2,7 +2,7 @@ import { actionTypes } from "../actionTypes";
 
 const initialState = "";
 
-const routeReducer = (state = initialState, { type, payload }) => {
+const pageReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case actionTypes.SET_DESTINED_PATH:
       state = payload;
@@ -13,4 +13,4 @@ const routeReducer = (state = initialState, { type, payload }) => {
   }
 };
 
-export default routeReducer;
+export default pageReducer;

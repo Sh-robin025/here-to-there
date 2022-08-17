@@ -16,7 +16,7 @@ const AuthPage = () => {
   const [submitting, setSubmitting] = useState(false);
   const [worksFor, setWorksFor] = useState("login");
 
-  const { destined, user_credentials } = useSelector((state) => state);
+  const { destined_page, user_credentials } = useSelector((state) => state);
 
   const location = useLocation().pathname.split("/")[1];
   const navigate = useNavigate();
@@ -63,9 +63,9 @@ const AuthPage = () => {
 
   useEffect(() => {
     if (user_credentials) {
-      destined ? navigate(`/${destined}`) : navigate("/");
+      destined_page ? navigate(`/${destined_page}`) : navigate("/");
     }
-  }, [user_credentials, navigate, destined]);
+  }, [user_credentials, navigate, destined_page]);
 
   return (
     <Container
@@ -91,7 +91,7 @@ const AuthPage = () => {
           </>
         )}
 
-        <Form vertical onSubmit={handleSubmit}>
+        <Form vertical onSubmit={handleSubmit} width="400px">
           {worksFor === "register" && <Input type="text" placeholder="Name" name="name" required />}
 
           <Input type="email" placeholder="Email" name="email" required />

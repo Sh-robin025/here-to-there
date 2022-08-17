@@ -29,6 +29,7 @@ export const loginWithApp = async (platform) => {
     await setDoc(doc(db, "users", email), { name: displayName, avatar: photoURL, id: uid, email });
 
     store.dispatch(userActions.login({ email, name: displayName, avatar: photoURL, id: uid }));
+    toast.success("Login successful");
     return;
   } catch (error) {
     toast.error("something went wrong");
