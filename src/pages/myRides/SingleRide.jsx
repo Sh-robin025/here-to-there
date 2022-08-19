@@ -13,7 +13,7 @@ const SingleRide = ({ ride }) => {
   const category = categories.find((i) => i.name === ride.category);
 
   useEffect(() => {
-    new Date(ride.pickDate.seconds) < new Date().setTime(new Date().getTime() + 5 * 60 * 60) &&
+    ride.pickDate.seconds * 1000 < new Date().setTime(new Date().getTime() + 5 * 60 * 60 * 1000) &&
       updateStatus(ride.id, "Completed");
   }, [ride]);
 
