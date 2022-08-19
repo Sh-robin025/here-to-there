@@ -30,9 +30,11 @@ export const Logo = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+
   img {
     height: 50px;
   }
+
   span {
     font-size: 32px;
     font-weight: 700;
@@ -55,6 +57,16 @@ export const NavItems = styled.ul`
   align-items: center;
   gap: 10px;
   margin: 0;
+
+  a {
+    color: inherit;
+  }
+
+  .login {
+    background: #d33f1a;
+    color: #fff;
+    border-radius: 5px;
+  }
 
   @media (max-width: 768px) {
     position: absolute;
@@ -105,11 +117,6 @@ export const NavItem = styled.li`
   border-radius: 10px;
   transition: all ease 0.5s;
 
-  :nth-last-child(1) {
-    background: #d33f1a;
-    color: #fff;
-    border-radius: 5px;
-  }
   :hover {
     box-shadow: 0px 0px 10px #d33f1a;
   }

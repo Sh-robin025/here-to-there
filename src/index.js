@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import { createRoot } from "react-dom/client";

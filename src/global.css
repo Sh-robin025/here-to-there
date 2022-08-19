@@ -37,3 +37,9 @@ a {
 .text-shadow {
   text-shadow: 1px 1px 0px #d33f1a;
 }
+
+.avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}

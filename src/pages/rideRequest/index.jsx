@@ -33,7 +33,7 @@ const RideRequest = () => {
 
     const reqData = {
       ...rideRequest,
-      categories: ride_state.selected,
+      category: ride_state.selected,
       client: user_credentials,
       status: "Pending",
     };

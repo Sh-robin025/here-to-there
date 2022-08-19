@@ -8,15 +8,7 @@ import Header from "./Header";
 const AppLayout = ({ children }) => {
   return (
     <Layout bgImage={bg}>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        // hideProgressBar={false}
-        // newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnHover
-      />
+      <ToastContainer position="top-right" autoClose={5000} closeOnClick rtl={false} pauseOnHover />
       <Header />
       {children}
       <Footer />

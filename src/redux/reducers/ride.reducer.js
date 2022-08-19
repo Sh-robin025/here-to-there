@@ -8,12 +8,10 @@ const initialState = {
 const rideReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case actionTypes.RIDE_SELECT:
-      state.selected = payload;
-      return state;
+      return { ...state, selected: payload };
 
     case actionTypes.SET_MY_RIDES:
-      state.my_rides = payload;
-      return state;
+      return { ...state, my_rides: payload };
 
     default:
       return state;

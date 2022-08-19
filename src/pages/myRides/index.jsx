@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import getMyRides from "../../services/getMyRides";
 import Container from "../../styles/container";
+import SingleRide from "./SingleRide";
 
 const MyRides = () => {
-  const [rides, setRides] = useState(null);
+  const { my_rides } = useSelector((state) => state.ride_state);
 
   useEffect(() => {
-    getMyRides().then((res) => setRides(res));
+    getMyRides();
   }, []);
 
   return (
-    <Container height="100vh">
-      <h2>Here will display users all ride.</h2>
-      <h1>There are {rides.length} rides for me</h1>
-      {/* {my_rides.length && } */}
+    <Container height="100vh" className="py-5">
+      {my_rides.map((ride, key) => (
+        <SingleRide ride={ride} key={key} />
+      ))}
     </Container>
   );
 };

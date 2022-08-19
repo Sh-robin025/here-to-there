@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
+import { AiOutlineLogout, AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
+import { FaUserAlt } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -41,13 +42,38 @@ const Header = () => {
       </MobileMenu>
 
       <NavItems mobileMenu={showMenu}>
-        <NavItem>Offers</NavItem>
+        <Link to="#">
+          <NavItem>Offers</NavItem>
+        </Link>
+
         <NavItem>Support</NavItem>
 
         {user ? (
-          <NavItem onClick={handleLogout}>Logout</NavItem>
+          <div class="dropdown">
+            <Button
+              className="dropdown-toggle"
+              type="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {user.avatar ? <img src={user.avatar} alt="" className="avatar" /> : <FaUserAlt />}
+              {user.name}
+            </Button>
+
+            <div class="dropdown-menu text-center p-3">
+              <Link to="/my-rides">
+                <NavItem>My Rides</NavItem>
+              </Link>
+
+              <Link to="#">
+                <NavItem onClick={handleLogout}>
+                  Logout <AiOutlineLogout className="font-weight-bold" />
+                </NavItem>
+              </Link>
+            </div>
+          </div>
         ) : (
-          <Link to="/login">
+          <Link to="/login" className="login">
             <NavItem>Login</NavItem>
           </Link>
         )}
