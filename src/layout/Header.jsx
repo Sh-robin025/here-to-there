@@ -49,7 +49,7 @@ const Header = () => {
         <NavItem>Support</NavItem>
 
         {user ? (
-          <div class="dropdown">
+          <div className="dropdown">
             <Button
               className="dropdown-toggle"
               type="button"
@@ -60,7 +60,7 @@ const Header = () => {
               {user.name}
             </Button>
 
-            <div class="dropdown-menu text-center p-3">
+            <div className="dropdown-menu text-center p-3">
               <Link to="/my-rides">
                 <NavItem>My Rides</NavItem>
               </Link>
